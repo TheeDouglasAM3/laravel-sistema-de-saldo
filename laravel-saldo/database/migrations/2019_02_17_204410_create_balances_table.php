@@ -15,7 +15,6 @@ class CreateBalancesTable extends Migration
     {
         Schema::create('balances', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
         });
     }
 
