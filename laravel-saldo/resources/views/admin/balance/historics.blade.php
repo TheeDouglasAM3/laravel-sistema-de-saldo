@@ -31,9 +31,15 @@
                         <tr>
                             <td>{{ $his->id }}</td>
                             <td>{{ number_format($his->amount, 2, ',', '.') }}</td>
-                            <td>{{ $his->type }}</td>
+                            <td>{{ $his->types($his->type) }}</td>
                             <td>{{ $his->date }}</td>
-                            <td>{{ $his->user_id_transaction }}</td>
+                            <td>
+                                @if($his->user_id_transaction)
+                                    {{ $his->userSender->name  }}
+                                @else
+                                    -
+                                @endif
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
